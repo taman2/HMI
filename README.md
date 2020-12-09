@@ -1,2 +1,2 @@
 # HMI
-Human Machine Interfacea For Medical Devices 
+Human Machine Interfaces For Medical Devices 
