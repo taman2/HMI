@@ -281,9 +281,9 @@ void TScreen_Get_KeyPressed_From_Recievd_Buffer(void)
 
   if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1] ==T_RESPONSE_PageID)
   {
-	TScreen_Recieved_current_Page=TScreen_Recived_Buffer[3];
-	TScreen_Recieved_key_pressed=TScreen_Recived_Buffer[4];
-	TScreen_Recieve_Complete_Flag=0;
+		TScreen_Recieved_current_Page=TScreen_Recived_Buffer[3];
+		TScreen_Recieved_key_pressed=TScreen_Recived_Buffer[4];
+		TScreen_Recieve_Complete_Flag=0;
 
   }
   else
@@ -338,21 +338,21 @@ void TScreen_Start_Timer(uinteg8_t Timer_Num)
    switch(Timer_Num)
   {
 	case(0):
-     TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM0_CTR_ADDRESS,T_SCREEN_TIMER_DOWEN_COUNT,T_SCREEN_VAR_SIZE_1);
-     TScreen_Send_Packet(TScreen_Send_Buffer);
-	 break;
+		 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM0_CTR_ADDRESS,T_SCREEN_TIMER_DOWEN_COUNT,T_SCREEN_VAR_SIZE_1);
+		 TScreen_Send_Packet(TScreen_Send_Buffer);
+		 break;
 	case(1):
-	 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM1_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
-	 TScreen_Send_Packet(TScreen_Send_Buffer);
-	 break;
+		 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM1_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
+		 TScreen_Send_Packet(TScreen_Send_Buffer);
+		 break;
 	case(2):
-	 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM2_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
-	 TScreen_Send_Packet(TScreen_Send_Buffer);
-	 break;
+		 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM2_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
+		 TScreen_Send_Packet(TScreen_Send_Buffer);
+		 break;
 	case(3):
-	 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM3_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
-	 TScreen_Send_Packet(TScreen_Send_Buffer);
-	 break;
+		 TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM3_CTR_ADDRESS,T_SCREEN_TIMER_UP_COUNT,T_SCREEN_VAR_SIZE_1);
+		 TScreen_Send_Packet(TScreen_Send_Buffer);
+		 break;
   }
 
 }
@@ -370,21 +370,21 @@ void TScreen_Read_Timer_value(uinteg8_t Timer_Num)
 	switch(Timer_Num)
 	{
 		case(0):
-		TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM0_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
-		TScreen_Send_Packet(TScreen_Send_Buffer);
-		break;
+			TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM0_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
+			TScreen_Send_Packet(TScreen_Send_Buffer);
+			break;
 		case(1):
-		TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM1_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
-		TScreen_Send_Packet(TScreen_Send_Buffer);
-		break;
+			TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM1_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
+			TScreen_Send_Packet(TScreen_Send_Buffer);
+			break;
 		case(2):
-		TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM2_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
-		TScreen_Send_Packet(TScreen_Send_Buffer);
-		break;
+			TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM2_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
+			TScreen_Send_Packet(TScreen_Send_Buffer);
+			break;
 		case(3):
-		TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM3_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
-		TScreen_Send_Packet(TScreen_Send_Buffer);
-		break;
+			TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,N32_READ,T_SCREEN_TIM3_VAR_ADDRESS,T_SCREEN_NO_DATA,T_SCREEN_NO_DATA);
+			TScreen_Send_Packet(TScreen_Send_Buffer);
+			break;
 	}
 
 }
