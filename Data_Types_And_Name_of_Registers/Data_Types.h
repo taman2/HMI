@@ -1,7 +1,6 @@
 /*
  *  Data_types.h
  *  Created: 11/1/2019 5:36:45 PM
- *  Author: Asaad
  *  Author: Amgad_HMI
  */ 
 
