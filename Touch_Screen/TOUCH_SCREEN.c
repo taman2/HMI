@@ -27,8 +27,7 @@ volatile uinteg8_t TScreen_Recieved_key_pressed=0;
 
 /***********************FOR VP Functions**************************************************************************/
 /*********************************************************************************************************************************************/
- void TScreen_Generate_VpFunctions_packet(volatile uinteg8_t *Screen_packet ,uinteg8_t T_Screen_Command , uinteg32_t T_Screen_Var_Adress ,
-                                            uinteg32_t T_Screen_Var_Value, uinteg8_t T_Screen_Var_Size )
+ void TScreen_Generate_VpFunctions_packet(volatile uinteg8_t *Screen_packet ,uinteg8_t T_Screen_Command , uinteg32_t T_Screen_Var_Adress ,uinteg32_t T_Screen_Var_Value, uinteg8_t T_Screen_Var_Size )
 {
 	if(T_Screen_Var_Size ==T_SCREEN_VAR_SIZE_2)
 	{
@@ -108,8 +107,7 @@ volatile uinteg8_t TScreen_Recieved_key_pressed=0;
 
 }
 
-void TScreen_GenerateConfig_Status_Functions_packet( uinteg8_t *Screen_packet ,uinteg8_t T_Screen_Command , uinteg64_t T_Screen_Data_Value,
-                                                    uinteg8_t T_Screen_Data_Size)
+void TScreen_GenerateConfig_Status_Functions_packet( uinteg8_t *Screen_packet ,uinteg8_t T_Screen_Command , uinteg64_t T_Screen_Data_Value,uinteg8_t T_Screen_Data_Size)
 {
 	if(T_Screen_Data_Size ==T_SCREEN_NO_DATA)
 	{
@@ -203,8 +201,7 @@ void TScreen_Recieve_Packet(void)
 uinteg8_t TScreen_GetData_From_Recievd_Buffer(void)
 {
 
-	if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1]
-	    ==T_RESPONSE_Normal &&TScreen_Recived_Buffer[3]==T_16BIT_ADDRESS)
+	if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1] ==T_RESPONSE_Normal &&TScreen_Recived_Buffer[3]==T_16BIT_ADDRESS)
 	{
 		TScreen_Recived_Var_Address=TScreen_Recived_Buffer[2];
 		TScreen_Recived_Var_Address=(TScreen_Recived_Var_Address<<8);
@@ -220,8 +217,7 @@ uinteg8_t TScreen_GetData_From_Recievd_Buffer(void)
 		return 1;
 	}
 
-	else if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1]
-	        ==T_RESPONSE_Normal  &&TScreen_Recived_Buffer[3]==T_32BIT_ADDRESS)
+	else if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1] ==T_RESPONSE_Normal  &&TScreen_Recived_Buffer[3]==T_32BIT_ADDRESS)
 	{
 		TScreen_Recived_Var_Address=TScreen_Recived_Buffer[2];
 		TScreen_Recived_Var_Address=(TScreen_Recived_Var_Address<<8);
@@ -275,7 +271,6 @@ uinteg8_t TScreen_GetData_From_Recievd_Buffer(void)
 	{
 		TScreen_Recieve_Complete_Flag=0;
 	}
-   //}
 
 return 0;
 
@@ -284,8 +279,7 @@ return 0;
 void TScreen_Get_KeyPressed_From_Recievd_Buffer(void)
 {
 
-  if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1]
-                                  ==T_RESPONSE_PageID)
+  if(TScreen_Recived_Buffer[0]==T_SCREEN_HEADER_BYTE &&TScreen_Recived_Buffer[1] ==T_RESPONSE_PageID)
   {
 	TScreen_Recieved_current_Page=TScreen_Recived_Buffer[3];
 	TScreen_Recieved_key_pressed=TScreen_Recived_Buffer[4];
@@ -368,9 +362,6 @@ void TScreen_Stop_Timer()
    TScreen_Send_Packet(TScreen_Send_Buffer);
    TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM1_CTR_ADDRESS,T_SCREEN_TIMER_STOP,T_SCREEN_VAR_SIZE_1);
    TScreen_Send_Packet(TScreen_Send_Buffer);
-   /*TScreen_Generate_VpFunctions_packet(TScreen_Send_Buffer,SYSTEM_Register_Write,T_SCREEN_TIM3_CTR_ADDRESS,T_SCREEN_TIMER_STOP,T_SCREEN_VAR_SIZE_1);
-   TScreen_Send_Packet(TScreen_Send_Buffer);*/
-
 
 
 }
