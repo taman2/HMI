@@ -2,13 +2,12 @@
  *  Data_types.h
  *  Created: 11/1/2019 5:36:45 PM
  *  Author: Asaad
+ *  Author: Amgad_HMI
  */ 
 
 
 #ifndef DATA_tYPES_H_
 #define DATA_tYPES_H_
-
-
 
 typedef   char					 char_t;
 typedef   unsigned char			uinteg8_t;
@@ -24,6 +23,5 @@ typedef   double            float64_t;
 typedef   long double      float128_t;
 typedef           void(*PntrToFunc_t)(void)  ;   
 #define   NullPointer      ((void *)0)
-
 
 #endif /* Data_types.h */

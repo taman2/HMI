@@ -3,6 +3,7 @@
  *
  * Created: 04/11/2019 01:15:54
  *  Author: Asaad
+ *  Author: Amgad_HMI
  */ 
 
 
@@ -173,10 +174,7 @@
 #define SPSR_SPIF  7
 #define SPSR_WCOL  6
 #define SPSR_SPI2X 0
-
 #define SPDR    ( *((volatile uinteg8_t* )(0X2F)) )
-
-
 
 /*
 #define A           0
@@ -187,8 +185,5 @@
 #define DDRA(PORT_NAME)    ( *((volatile INT8U* )      (0X3A-3(PORT_NAME)) )
 #define PINA(PORT_NAME)    ( *((volatile const INT8U* )(0X39-3(PORT_NAME)) )
 */
-
-//Timer Registers
-
 
 #endif /* AtmegaPort_H_ */
