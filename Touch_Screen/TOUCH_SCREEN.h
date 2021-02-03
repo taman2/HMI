@@ -2,7 +2,7 @@
  * T_SCREEN.h
  *
  * Created: 9/26/2020 5:38:47 PM
- *  Author: Mohamed
+ *  Author: Mohamed Salah Taman
  */ 
 #include "Data_Types.h"
 
@@ -114,6 +114,10 @@
    #define T_SCREEN_VAR16_ADDRESS9                0X00080012
    #define T_SCREEN_VAR16_ADDRESS10               0X00080014
    #define T_SCREEN_VAR16_ADDRESS11               0X00080016
+   #define T_SCREEN_VAR16_ADDRESS12               0X00080018
+   #define T_SCREEN_VAR16_ADDRESS13               0X0008001A
+
+
 
    
 /*********************** SCREEN USED 32bit VARIABLS ADDRESSES *********************************************/
@@ -153,22 +157,11 @@
    extern volatile uinteg8_t TScreen_Recived_Buffer_Index;
    extern volatile uinteg8_t TScreen_Recieved_key_pressed;
    extern volatile uinteg8_t TScreen_Recieved_current_Page;
-   //extern volatile uinteg32_t TScreen_Recived_Timer_Value;
    extern volatile uinteg8_t TScreen_Recieve_Data__Not_Complete_Flag;
    extern volatile uinteg32_t TScreen_Recived_Var_Value;
    extern volatile uinteg32_t TScreen_Recived_Var_Address;
    extern volatile uinteg32_t TScreen_Recived_Var_Value;
-   //extern volatile uinteg8_t Send_Temprature_values_EverySec_Counter;
-   //extern volatile uinteg16_t Send_Hour_Meter_value_EveryHour_Counter;
-   //extern volatile uinteg16_t TScreen_Icon_Vlue;
-   //extern  volatile uinteg8_t TScreen_Half_Power_LedCtrl;
-  
-/*  extern float32_t  f32_Humadity,f32_Temp;
-  extern uinteg8_t u8_DHT_Result_State, u8_DHT_No_Error_Flag,u8_DHT_Check_Sum_Flag,u8_DHT_No_Response_Flag;
-  uinteg8_t Air_High_Temp_Flag;
-  uinteg8_t Air_Normal_Temp_Flag;
-  extern  uinteg16_t TScreen_Recieved_BabyTemp;
-  extern uinteg16_t TScreen_Recieved_AirTemp;*/
+   
 /***************************************** SCREEN MAIN  FUNCTIONS  ************************** *********************************************/
 
 void TScreen_Init(void);
@@ -196,16 +189,13 @@ void Send_Temprature_values_EverySec_ISR(void);
 void Send_Temprature_values_EverySec(void);
 void TScreen_Mian_State(void);
 void TScreen_Set_Time_State(void);
-void TScreen_Houer_Merter_Reset_State(void);
-void TScreen_Set_Temprature_State(void);
-
 void TScreen_Get_KeyPressed_From_Recievd_Buffer(void);
 void TScreen_Get_Value32_From_Recievd_Buffer(void);
 void TScreen_Get_Value16_From_Recievd_Buffer(void);
+void TScreen_Chang_Page(uinteg8_t U8_PageNum);
+void TScreen_Write_Var16(uinteg16_t U16_Value,uinteg32_t Address);
+void TScreen_Write_Var32(uinteg16_t U32_Value,uinteg32_t Address);
 
-void TScreen_Send_Sensor_Not_Conn(uinteg8_t Error_State);
-void TScreen_Send_Sensor_Check_Sum(uinteg8_t Error_State);
-void TScreen_Write_HouerMeter_everyHouer(void);
 
 
 
