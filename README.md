@@ -1,4 +1,4 @@
-# HMI
+# HMI Touch Screens
 Human Machine Interfaces.. For Devices 
 ...HMI Software Drivers to inteface Atmega32 MCUs with TopWay Touch Screens . using Atmel Studio IDE 
 Note !!!!!!!!!!!
