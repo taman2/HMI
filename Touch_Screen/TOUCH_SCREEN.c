@@ -31,78 +31,78 @@ volatile uinteg8_t TScreen_Recieved_key_pressed=0;
 {
 	if(T_Screen_Var_Size ==T_SCREEN_VAR_SIZE_2)
 	{
-		Screen_packet[0]=T_SCREEN_HEADER_BYTE;
-	    Screen_packet[1]=T_Screen_Command;
+        Screen_packet[0]=T_SCREEN_HEADER_BYTE;
+        Screen_packet[1]=T_Screen_Command;
         Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
         Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
         Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
         Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
-		Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value>>8);
-		Screen_packet[7]=(uinteg8_t)(T_Screen_Var_Value);
-		Screen_packet[8]=(T_SCREEN_TAILE_BYTE1);
-		Screen_packet[9]=(T_SCREEN_TAILE_BYTE2);
-		Screen_packet[10]=(T_SCREEN_TAILE_BYTE3);
-		Screen_packet[11]=(T_SCREEN_TAILE_BYTE4);
+        Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value>>8);
+        Screen_packet[7]=(uinteg8_t)(T_Screen_Var_Value);
+        Screen_packet[8]=(T_SCREEN_TAILE_BYTE1);
+        Screen_packet[9]=(T_SCREEN_TAILE_BYTE2);
+        Screen_packet[10]=(T_SCREEN_TAILE_BYTE3);
+        Screen_packet[11]=(T_SCREEN_TAILE_BYTE4);
 	}
 	else if(T_Screen_Var_Size ==T_SCREEN_VAR_SIZE_1)
 	{
-		Screen_packet[0]=T_SCREEN_HEADER_BYTE;
-		Screen_packet[1]=T_Screen_Command;
-		Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
-		Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
-		Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
-		Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
-		Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value);
-		Screen_packet[7]=(T_SCREEN_TAILE_BYTE1);
-		Screen_packet[8]=(T_SCREEN_TAILE_BYTE2);
-		Screen_packet[9]=(T_SCREEN_TAILE_BYTE3);
-		Screen_packet[10]=(T_SCREEN_TAILE_BYTE4);
+        Screen_packet[0]=T_SCREEN_HEADER_BYTE;
+        Screen_packet[1]=T_Screen_Command;
+        Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
+        Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
+        Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
+        Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
+        Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value);
+        Screen_packet[7]=(T_SCREEN_TAILE_BYTE1);
+        Screen_packet[8]=(T_SCREEN_TAILE_BYTE2);
+        Screen_packet[9]=(T_SCREEN_TAILE_BYTE3);
+        Screen_packet[10]=(T_SCREEN_TAILE_BYTE4);
 	}
 	else if(T_Screen_Var_Size ==T_SCREEN_VAR_SIZE_4)
 	{
-	    Screen_packet[0]=T_SCREEN_HEADER_BYTE;
-		Screen_packet[1]=T_Screen_Command;
-	    Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
-		Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
-	    Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
-		Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
-		Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value>>24);
-		Screen_packet[7]=(uinteg8_t)(T_Screen_Var_Value>>16);
-		Screen_packet[8]=(uinteg8_t)(T_Screen_Var_Value>>8);
-		Screen_packet[9]=(uinteg8_t)(T_Screen_Var_Value);
-		Screen_packet[10]=(T_SCREEN_TAILE_BYTE1);
-		Screen_packet[11]=(T_SCREEN_TAILE_BYTE2);
-		Screen_packet[12]=(T_SCREEN_TAILE_BYTE3);
-		Screen_packet[13]=(T_SCREEN_TAILE_BYTE4);
+        Screen_packet[0]=T_SCREEN_HEADER_BYTE;
+        Screen_packet[1]=T_Screen_Command;
+        Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
+        Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
+        Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
+        Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
+        Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value>>24);
+        Screen_packet[7]=(uinteg8_t)(T_Screen_Var_Value>>16);
+        Screen_packet[8]=(uinteg8_t)(T_Screen_Var_Value>>8);
+        Screen_packet[9]=(uinteg8_t)(T_Screen_Var_Value);
+        Screen_packet[10]=(T_SCREEN_TAILE_BYTE1);
+        Screen_packet[11]=(T_SCREEN_TAILE_BYTE2);
+        Screen_packet[12]=(T_SCREEN_TAILE_BYTE3);
+        Screen_packet[13]=(T_SCREEN_TAILE_BYTE4);
 	}
 	else if(T_Screen_Var_Size ==T_SCREEN_NO_DATA)
 	{
 
-		Screen_packet[0]=T_SCREEN_HEADER_BYTE;
-		Screen_packet[1]=T_Screen_Command;
-		Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
-		Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
-		Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
-		Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
-		Screen_packet[6]=(T_SCREEN_TAILE_BYTE1);
-		Screen_packet[7]=(T_SCREEN_TAILE_BYTE2);
-		Screen_packet[8]=(T_SCREEN_TAILE_BYTE3);
-		Screen_packet[9]=(T_SCREEN_TAILE_BYTE4);
+        Screen_packet[0]=T_SCREEN_HEADER_BYTE;
+        Screen_packet[1]=T_Screen_Command;
+        Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
+        Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
+        Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
+        Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
+        Screen_packet[6]=(T_SCREEN_TAILE_BYTE1);
+        Screen_packet[7]=(T_SCREEN_TAILE_BYTE2);
+        Screen_packet[8]=(T_SCREEN_TAILE_BYTE3);
+        Screen_packet[9]=(T_SCREEN_TAILE_BYTE4);
 	}
     else if(T_Screen_Var_Size ==T_SCREEN_TOGGLE_VAR_BIT)
 	{
 
-		Screen_packet[0]=T_SCREEN_HEADER_BYTE;
-		Screen_packet[1]=T_Screen_Command;
-		Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
-		Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
-		Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
-		Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
-	    Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value);
-		Screen_packet[7]=(T_SCREEN_TAILE_BYTE1);
-		Screen_packet[8]=(T_SCREEN_TAILE_BYTE2);
-		Screen_packet[9]=(T_SCREEN_TAILE_BYTE3);
-		Screen_packet[10]=(T_SCREEN_TAILE_BYTE4);
+        Screen_packet[0]=T_SCREEN_HEADER_BYTE;
+        Screen_packet[1]=T_Screen_Command;
+        Screen_packet[2]=(uinteg8_t)(T_Screen_Var_Adress>>24);
+        Screen_packet[3]=(uinteg8_t)(T_Screen_Var_Adress>>16);
+        Screen_packet[4]=(uinteg8_t)(T_Screen_Var_Adress>>8);
+        Screen_packet[5]=(uinteg8_t)(T_Screen_Var_Adress);
+        Screen_packet[6]=(uinteg8_t)(T_Screen_Var_Value);
+        Screen_packet[7]=(T_SCREEN_TAILE_BYTE1);
+        Screen_packet[8]=(T_SCREEN_TAILE_BYTE2);
+        Screen_packet[9]=(T_SCREEN_TAILE_BYTE3);
+        Screen_packet[10]=(T_SCREEN_TAILE_BYTE4);
 	}
 
 }
