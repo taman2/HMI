@@ -12,7 +12,7 @@
  * -> 0.087890625° per step,
  * -> frequency 100Hz.
 */
-#include "Stepper.h"
+#include "U_Stepper.h"
 
 static uint8_t _seq=0;
 static uint8_t _dir=0;
